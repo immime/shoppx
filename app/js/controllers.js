@@ -3,9 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
-
+  .controller('CategoryCtrl', ['$scope', 'sngCategories', function($scope, sngCategories) {
+    $scope.categories = sngCategories.list;
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
+  .controller('CartCtrl', ['$scope', function($scope) {
 
   }]);
