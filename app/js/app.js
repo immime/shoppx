@@ -10,7 +10,8 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/products', {templateUrl: 'partials/products.html', controller: 'CategoryCtrl'});
+  $routeProvider.when('/categories', {templateUrl: 'partials/categories.html', controller: 'CategoriesCtrl'});
+  $routeProvider.when('/category/:categoryId/', {templateUrl: 'partials/category.html', controller: 'CategoryCtrl'});
   $routeProvider.when('/cart', {templateUrl: 'partials/cart.html', controller: 'CartCtrl'});
-  $routeProvider.otherwise({redirectTo: '/products'});
+  $routeProvider.otherwise({redirectTo: '/categories'});
 }]);

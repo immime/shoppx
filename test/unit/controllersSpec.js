@@ -4,12 +4,12 @@
 describe('Controllers', function() {
   beforeEach(module('myApp.controllers'));
 
-  describe('Category controller', function(){
+  describe('Categories controller', function(){
 
     var scope;
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      $controller("CategoryCtrl", {
+      $controller("CategoriesCtrl", {
           $scope: scope,
           sngCategories: {list: "foo"}
       });
@@ -17,8 +17,25 @@ describe('Controllers', function() {
 
     it('scope category list', inject(function($controller, $rootScope) {
       //spec body
-      console.log("scope", scope);
       expect(scope.categories).toBe("foo");
+    }));
+
+  });
+
+  describe('Category Controller', function() {
+    var scope;
+    beforeEach(inject(function($rootScope, $controller) {
+      scope = $rootScope.$new();
+      $controller("CategoryCtrl", {
+          $scope: scope,
+          routeParams: {categoryId: 1},
+          sngCategories: {list: [{id:1,title:"First"}]},
+          sngCategory: {list: [{id:1, category:1,title:"Product 1", price: 1.23}]}
+      });
+    }));
+
+    it('finds category', inject(function($controller, $rootScope) {
+      expect(scope.category).toBeDefined();
     }));
 
   });
