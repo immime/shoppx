@@ -27,6 +27,16 @@ angular.module('myApp.controllers', [])
       };
     })
   }])
+
+  .controller('ProductCtrl', ['$scope', '$routeParams', 'sngCategories', 'sngProducts', function($scope, $routeParams, sngCategories, sngProducts) {
+    $scope.product = null;
+    sngProducts.list.forEach(function(product) {
+      if (product.id == $routeParams.productId) {
+        $scope.product = product;
+      };
+    })
+  }])
+
   .controller('CartCtrl', ['$scope', function($scope) {
 
   }]);
