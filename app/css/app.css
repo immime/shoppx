@@ -1,3 +1,55 @@
 body {
-  color: #333;
+  color: #333333;
+}
+body a {
+  color: #000099;
+}
+body a:visited {
+  color: #cc0099;
+}
+#appWrap {
+  padding: 1em;
+}
+header#appHeader h1 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin-right: 1em;
+}
+header#appHeader #mainMenu {
+  display: inline-block;
+}
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.menu-list li {
+  display: inline-block;
+  margin-right: 1em;
+}
+.menu-list li:last-child {
+  margin-right: 0;
+}
+.menu-list li a {
+  text-decoration: none;
+}
+.reset-margins {
+  margin: 0;
+  padding: 0;
+}
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.inline-list-item {
+  display: inline-block;
+  margin-right: 1em;
+}
+.inline-list-item:last-child {
+  margin-right: 0;
+}
+.scaffold {
+  border: 1px solid red;
 }

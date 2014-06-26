@@ -1,1 +1,63 @@
-body {color: #333;}
+@text-color:#333;
+@link-color:#009;
+@link-visited-color:#c09;
+body {
+  color: @text-color;
+  a {
+    color: @link-color;
+
+    &:visited {
+      color: @link-visited-color;
+    }
+  }
+}
+
+#appWrap {
+  padding: 1em;
+}
+
+header#appHeader {
+  h1 {
+    .reset-margins;
+    display: inline-block;
+    margin-right: 1em;
+  }
+  #mainMenu {
+    display:inline-block;
+  }
+}
+
+.menu-list {
+  .reset-list;
+  
+  li {
+    .inline-list-item;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+//utils
+.reset-margins {
+  margin: 0;
+  padding: 0;
+}
+.reset-list {
+  .reset-margins;
+  list-style-type: none;
+}
+
+.inline-list-item {
+  display:inline-block;
+    margin-right: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+}
+
+.scaffold {
+  border:1px solid red;
+}
