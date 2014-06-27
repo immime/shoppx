@@ -1,5 +1,7 @@
 <ul sng-category-navigation></ul>
 
-<p>{{product.title}}</p>
-<p>{{product.price|currency}}</p>
+<a href="#/category/{{category.id}}/">&lt; Back to {{category.title}}</a>
+
+<h2>{{product.title}}</h2>
 <img src="http://lorempixel.com/{{imgWidth}}/{{imgHeight}}/{{categorySlug}}/{{product.id}}" />
+<p>{{product.price|currency}}</p>

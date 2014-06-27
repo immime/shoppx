@@ -18,7 +18,7 @@ angular.module('myApp.controllers', [])
   **********/
   .controller('CategoryCtrl', ['$scope', '$routeParams', 'sngCategories', 'sngProducts', 'sngImageSizes', 
     function($scope, $routeParams, sngCategories, sngProducts, sngImageSizes) {
-      
+
     $scope.categories = sngCategories.list;
 
     $scope.category = null;
@@ -50,6 +50,8 @@ angular.module('myApp.controllers', [])
   *********/
   .controller('ProductCtrl', ['$scope', '$routeParams', 'sngCategories', 'sngProducts', 'sngImageSizes', 
     function($scope, $routeParams, sngCategories, sngProducts, sngImageSizes) {
+
+    $scope.categories = sngCategories.list;
 
     $scope.product = null;
     sngProducts.list.forEach(function(product) {
