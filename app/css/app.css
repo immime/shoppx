@@ -19,6 +19,17 @@ header#appHeader h1 {
 header#appHeader #mainMenu {
   display: inline-block;
 }
+.category-menu li {
+  margin: 1em .5em;
+}
+.category-menu li a:link {
+  padding: 7px;
+  text-decoration: underline;
+}
+.category-menu li a:link:hover {
+  padding: 6px;
+  border: 1px solid #333333;
+}
 .menu-list {
   margin: 0;
   padding: 0;
@@ -33,6 +44,20 @@ header#appHeader #mainMenu {
 }
 .menu-list li a {
   text-decoration: none;
+}
+.menu-list li a.selected {
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+}
+#categoryProductList img {
+  display: block;
+}
+footer#footer {
+  margin-top: 2em;
+  border-top: 1px solid #cccccc;
+  padding-top: 1em;
+  color: #666666;
 }
 .reset-margins {
   margin: 0;

@@ -13,11 +13,11 @@ angular.module('myApp.directives', [])
     console.log('categories directive');
     return {
       restrict: "A",//Declare on a <ul> or <ol> element
-      template: '<li ng-repeat="category in categories">\
-        <a href="#/category/{{category.id}}/">{{category.title}}</a>\
+      template: '<li ng-repeat="cat in categories">\
+        <a ng-class="{\'selected\': (category.id == cat.id)}" href="#/category/{{cat.id}}/">{{cat.title}}</a>\
       </li>',
       link: function(scope, elem, attrs) {
-        elem.addClass('menu-list');
+        elem.addClass('menu-list category-menu');
       }
     }
   });
