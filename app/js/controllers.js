@@ -51,8 +51,8 @@ angular.module('myApp.controllers', [])
   /*
     Product
   *********/
-  .controller('ProductCtrl', ['$rootScope', '$scope', '$routeParams', 'sngCategories', 'sngProducts', 'sngImageSizes', 'sngNavigationState', 
-    function($rootScope, $scope, $routeParams, sngCategories, sngProducts, sngImageSizes, sngNavigationState) {
+  .controller('ProductCtrl', ['$rootScope', '$scope', '$routeParams', 'sngCategories', 'sngProducts', 'sngImageSizes', 'sngNavigationState','sngCart', 
+    function($rootScope, $scope, $routeParams, sngCategories, sngProducts, sngImageSizes, sngNavigationState, sngCart) {
       //Main navigation is outside the ngView, so nav state variables go on root scope.
       sngNavigationState.goProducts();
 
@@ -71,28 +71,18 @@ angular.module('myApp.controllers', [])
       $scope.imgHeight = sngImageSizes.medium.height;
 
       $scope.addToCart = function(product) {
-        if (!$rootScope.cart) {
-          $rootScope.cart =  {};
-        };
-        if (!$rootScope.cart[product.id]) {
-          $rootScope.cart[product.id] = [];
-        };
-        if (!$rootScope.totalInCart) {
-          $rootScope.totalInCart = 0;
-        }
-
-        $rootScope.cart[product.id].push(product)
-        $rootScope.totalInCart++;
+        sngCart.addProduct(product);
 
       }
 
       $scope.removeFromCart = function(product) {
-        $rootScope.cart[product.id].pop();
-        $rootScope.totalInCart--;
+        sngCart.removeProduct(product);
       }
     }
   ])
 
-  .controller('CartCtrl', ['$scope', 'sngNavigationState', function($scope, sngNavigationState) {
+  .controller('CartCtrl', ['$scope', 'sngCart', 'sngNavigationState', function($scope, sngCart, sngNavigationState) {
     sngNavigationState.goCart();
+
+    $scope.cart = sngCart.categories
   }]);

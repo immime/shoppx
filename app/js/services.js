@@ -39,6 +39,33 @@ angular.module('myApp.services', [])
     "medium": {height:240,width:320},
     "large":  {height:480,width:640}
   })
+  .factory('sngCart', ['$rootScope', function($rootScope) {
+    $rootScope.totalInCart = 0;
+    return  {
+      categories: {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: []
+      },
+      addProduct: function(product) {
+        var cartCategory = this.categories[product.categoryId];
+        console.log('add product', product);
+
+        this.categories[product.categoryId].push(product);
+        $rootScope.totalInCart++;
+      },
+      removeProduct: function(product) {
+        var cartCategory = this.categories[product.categoryId];
+
+        if (cartCategory.length > 0) {
+          cartCategory.pop();
+          $rootScope.totalInCart--;
+        };
+      }
+    }
+  }])
   .factory('sngNavigationState', ['$rootScope', function($rootScope) {
     $rootScope.inProducts = true;
     return {
