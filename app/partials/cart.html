@@ -1,5 +1,17 @@
-<p>Cart</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<h2>Cart</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Total</th>
+  </thead>
+  <tr ng-repeat="(id, products) in cart">
+    <td>{{products[0].title}}</td>
+    <td>{{products[0].price|currency}}</td>
+    <td>{{products.length}}</td>
+    <td>{{ products.length*products[0].price|currency }}</td>
+  </tr>
+</table>

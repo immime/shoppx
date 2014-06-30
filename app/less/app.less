@@ -24,6 +24,13 @@ header#appHeader {
   }
   #mainMenu {
     display:inline-block;
+
+    li.selected {
+      font-weight: bold;
+      a {
+        color: @text-color;
+      }
+    }
   }
 }
 
@@ -70,7 +77,27 @@ footer#footer {
   color: lighten(@text-color, 20%);
 }
 
+table {
+  color: @text-color;
+  border-collapse: collapse;
+  border: 1px solid @text-color;
+
+  thead th, tbody td {
+    padding:1em;
+  }
+  thead th {
+    background-color: @text-color;
+    color: #fff;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #eee;
+  }
+}
+
+//
 //utils
+/////////
 .reset-margins {
   margin: 0;
   padding: 0;

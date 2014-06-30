@@ -38,4 +38,11 @@ angular.module('myApp.services', [])
     "small":  {height:120,width:160},
     "medium": {height:240,width:320},
     "large":  {height:480,width:640}
-  });
+  })
+  .factory('sngNavigationState', ['$rootScope', function($rootScope) {
+    $rootScope.inProducts = true;
+    return {
+      goProducts: function() {$rootScope.inProducts = true;$rootScope.inCart = false},
+      goCart: function() {$rootScope.inProducts = false;$rootScope.inCart = true}
+    };
+  }]);

@@ -10,7 +10,6 @@ angular.module('myApp.directives', [])
     };
   }])
   .directive('sngCategoryNavigation', function() {
-    console.log('categories directive');
     return {
       restrict: "A",//Declare on a <ul> or <ol> element
       template: '<li ng-repeat="cat in categories">\

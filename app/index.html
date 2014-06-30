@@ -20,8 +20,8 @@
       <h1>Shoppx</h1>
 
       <ul id="mainMenu" class="menu-list">
-        <li><a href="#/categories">Product Categories</a></li>
-        <li><a href="#/cart">Cart</a></li>
+        <li ng-class="{'selected':inProducts}"><a href="#/categories">Products</a></li>
+        <li ng-class="{'selected':inCart}"><a href="#/cart">Cart</a> (<span>{{totalInCart||0}}</span>)</li>
         <!-- <li><a href="#/account">Account</a></li> -->
       </ul>
     </header>

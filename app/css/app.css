@@ -19,6 +19,12 @@ header#appHeader h1 {
 header#appHeader #mainMenu {
   display: inline-block;
 }
+header#appHeader #mainMenu li.selected {
+  font-weight: bold;
+}
+header#appHeader #mainMenu li.selected a {
+  color: #333333;
+}
 .category-menu li {
   margin: 1em .5em;
 }
@@ -58,6 +64,22 @@ footer#footer {
   border-top: 1px solid #cccccc;
   padding-top: 1em;
   color: #666666;
+}
+table {
+  color: #333333;
+  border-collapse: collapse;
+  border: 1px solid #333333;
+}
+table thead th,
+table tbody td {
+  padding: 1em;
+}
+table thead th {
+  background-color: #333333;
+  color: #fff;
+}
+table tbody tr:nth-child(odd) {
+  background-color: #eee;
 }
 .reset-margins {
   margin: 0;
