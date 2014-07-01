@@ -82,8 +82,10 @@ angular.module('shoppx.controllers', [])
     }
   ])
 
-  .controller('CartCtrl', ['$scope', 'sngCart', 'sngNavigationState', function($scope, sngCart, sngNavigationState) {
+  .controller('CartCtrl', ['$scope', 'sngCart', 'sngCategories', 'sngNavigationState', function($scope, sngCart, sngCategories, sngNavigationState) {
     sngNavigationState.goCart();
+
+    $scope.categories = sngCategories.list;
 
     $scope.cart = sngCart.products
   }]);
