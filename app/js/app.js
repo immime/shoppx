@@ -12,7 +12,7 @@ angular.module('shoppx', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/categories', {templateUrl: 'partials/categories.html', controller: 'CategoriesCtrl'});
   $routeProvider.when('/category/:categoryId/', {templateUrl: 'partials/category.html', controller: 'CategoryCtrl'});
-  $routeProvider.when('/products/:productId/', {templateUrl: 'partials/product.html', controller: 'ProductCtrl'});
+  $routeProvider.when('/category/:categoryId/products/:productId/', {templateUrl: 'partials/product.html', controller: 'ProductCtrl'});
   $routeProvider.when('/cart', {templateUrl: 'partials/cart.html', controller: 'CartCtrl'});
   $routeProvider.otherwise({redirectTo: '/categories'});
 }]);

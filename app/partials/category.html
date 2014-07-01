@@ -1,10 +1,8 @@
-<ul sng-category-navigation></ul>
-
 <h2>{{category.title}}</h2>
 
 <ul class="reset-list" id="categoryProductList">
   <li ng-repeat="product in products" class="inline-list-item">
-    <a href="#/products/{{product.id}}"><img src="http://lorempixel.com/{{imgWidth}}/{{imgHeight}}/{{categorySlug}}/{{product.id}}"></a>
-    <a href="#/products/{{product.id}}">{{product.title}}</a>
+    <a href="#/category/{{product.categoryId}}/products/{{product.id}}"><img src="http://lorempixel.com/{{imgWidth}}/{{imgHeight}}/{{categorySlug}}/{{product.id}}"></a>
+    <a href="#/category/{{product.categoryId}}/products/{{product.id}}">{{product.title}}</a>
   </li>
 </ul>

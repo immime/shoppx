@@ -24,18 +24,20 @@ angular.module('shoppx.controllers', [])
 
     sngNavigationState.goProducts();
     $scope.categories = sngCategories.list;
-
-    $scope.category = null;
-
     $scope.imgWidth = sngImageSizes.small.width;
     $scope.imgHeight = sngImageSizes.small.height;
 
-    $scope.categories.forEach(function(cat) {
-      console.log("cat.id", cat.id)
-      if (cat.id == $routeParams.categoryId) {
-        $scope.category = cat;
-      };
-    })
+    $scope.category = null;
+    var catID = $routeParams.categoryId;
+
+    if (catID) {
+      $scope.categories.forEach(function(cat) {
+        console.log("cat.id", cat.id)
+        if (cat.id == catID) {
+          $scope.category = cat;
+        };
+      })
+    };
 
     $scope.categorySlug = $scope.category.title.toLowerCase();
 
@@ -55,8 +57,6 @@ angular.module('shoppx.controllers', [])
     function($rootScope, $scope, $routeParams, sngCategories, sngProducts, sngImageSizes, sngNavigationState, sngCart) {
       //Main navigation is outside the ngView, so nav state variables go on root scope.
       sngNavigationState.goProducts();
-
-      $scope.categories = sngCategories.list;
 
       $scope.product = null;
       sngProducts.list.forEach(function(product) {
@@ -84,8 +84,6 @@ angular.module('shoppx.controllers', [])
 
   .controller('CartCtrl', ['$scope', 'sngCart', 'sngCategories', 'sngNavigationState', function($scope, sngCart, sngCategories, sngNavigationState) {
     sngNavigationState.goCart();
-
-    $scope.categories = sngCategories.list;
 
     $scope.cart = sngCart.products
   }]);
