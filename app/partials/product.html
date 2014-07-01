@@ -4,7 +4,7 @@
 
 <h2>{{product.title}}</h2>
 <button ng-click="addToCart(product)">Add to Cart</button>
-<button ng-if="cart[product.id].length>0" ng-click="removeFromCart(product)">Remove From Cart</button><br />
+<button ng-if="cartProducts[product.id].length>0" ng-click="removeFromCart(product)">Remove From Cart</button><br />
 
 <img src="http://lorempixel.com/{{imgWidth}}/{{imgHeight}}/{{categorySlug}}/{{product.id}}" />
 <p>{{product.price|currency}}</p>

@@ -42,25 +42,23 @@ angular.module('myApp.services', [])
   .factory('sngCart', ['$rootScope', function($rootScope) {
     $rootScope.totalInCart = 0;
     return  {
-      categories: {
-        1: [],
-        2: [],
-        3: [],
-        4: [],
-        5: []
-      },
+      products: {},
       addProduct: function(product) {
-        var cartCategory = this.categories[product.categoryId];
+        var prodId = product.id;
         console.log('add product', product);
 
-        this.categories[product.categoryId].push(product);
+        if (!this.products[prodId]) {
+          this.products[prodId] = [];
+        };
+
+        this.products[product.id].push(product);
         $rootScope.totalInCart++;
       },
       removeProduct: function(product) {
-        var cartCategory = this.categories[product.categoryId];
+        var products = this.products[product.id];
 
-        if (cartCategory.length > 0) {
-          cartCategory.pop();
+        if (products.length > 0) {
+          products.pop();
           $rootScope.totalInCart--;
         };
       }

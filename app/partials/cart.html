@@ -8,10 +8,10 @@
       <th>Qty</th>
       <th>Total</th>
   </thead>
-  <tr ng-repeat="(category, products) in cart">
-    <td>{{products[0].title}}</td>
+  <tr ng-repeat="(prodId, products) in cart">
+    <td><a href="#/products/{{prodId}}/">{{products[0].title}}</a></td>
     <td>{{products[0].price|currency}}</td>
     <td>{{products.length}}</td>
-    <td>{{ products.length*products[0].price|currency }}</td>
+    <td>{{ products.length*products[0].price | currency }}</td>
   </tr>
 </table>

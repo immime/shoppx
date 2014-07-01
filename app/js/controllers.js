@@ -70,6 +70,7 @@ angular.module('myApp.controllers', [])
       $scope.imgWidth = sngImageSizes.medium.width;
       $scope.imgHeight = sngImageSizes.medium.height;
 
+      $scope.cartProducts = sngCart.products;
       $scope.addToCart = function(product) {
         sngCart.addProduct(product);
 
@@ -84,5 +85,5 @@ angular.module('myApp.controllers', [])
   .controller('CartCtrl', ['$scope', 'sngCart', 'sngNavigationState', function($scope, sngCart, sngNavigationState) {
     sngNavigationState.goCart();
 
-    $scope.cart = sngCart.categories
+    $scope.cart = sngCart.products
   }]);
