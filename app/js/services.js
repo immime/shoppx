@@ -40,9 +40,19 @@ angular.module('myApp.services', [])
     "large":  {height:480,width:640}
   })
   .factory('sngCart', ['$rootScope', function($rootScope) {
-    $rootScope.totalInCart = 0;
+    var prod = {};
+    var prodJSON = localStorage.getItem('products');
+
+    //If we've stored a cart earlier, retrieve it.
+    if (prodJSON) {
+      prod = JSON.parse(prodJSON);
+      $rootScope.totalInCart = parseInt(localStorage.getItem('totalInCart'));
+    } else {
+      $rootScope.totalInCart = 0;
+    };
+
     return  {
-      products: {},
+      products: prod,
       addProduct: function(product) {
         var prodId = product.id;
         console.log('add product', product);
@@ -53,6 +63,8 @@ angular.module('myApp.services', [])
 
         this.products[product.id].push(product);
         $rootScope.totalInCart++;
+
+        this.updateStorage();
       },
       removeProduct: function(product) {
         var products = this.products[product.id];
@@ -60,7 +72,12 @@ angular.module('myApp.services', [])
         if (products.length > 0) {
           products.pop();
           $rootScope.totalInCart--;
+          this.updateStorage();
         };
+      },
+      updateStorage: function() {
+        localStorage.setItem('products', JSON.stringify(this.products));
+        localStorage.setItem('totalInCart', $rootScope.totalInCart);
       }
     }
   }])
