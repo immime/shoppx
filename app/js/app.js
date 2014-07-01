@@ -2,12 +2,12 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('shoppx', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+  'shoppx.filters',
+  'shoppx.services',
+  'shoppx.directives',
+  'shoppx.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/categories', {templateUrl: 'partials/categories.html', controller: 'CategoriesCtrl'});

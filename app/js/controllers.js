@@ -4,7 +4,7 @@
  Controllers
  */
 
-angular.module('myApp.controllers', [])
+angular.module('shoppx.controllers', [])
 
   /*
     Categories
