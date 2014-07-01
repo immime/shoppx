@@ -19,7 +19,14 @@ header#appHeader h1 {
 header#appHeader #mainMenu {
   display: inline-block;
 }
+header#appHeader #mainMenu li {
+  color: #666666;
+}
+header#appHeader #mainMenu li a {
+  color: #666666;
+}
 header#appHeader #mainMenu li.selected {
+  color: #333333;
   font-weight: bold;
 }
 header#appHeader #mainMenu li.selected a {
@@ -35,6 +42,9 @@ header#appHeader #mainMenu li.selected a {
 .category-menu li a:link:hover {
   padding: 6px;
   border: 1px solid #333333;
+}
+.category-menu li a:visited {
+  color: #000099;
 }
 .menu-list {
   margin: 0;

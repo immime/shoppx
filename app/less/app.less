@@ -25,7 +25,15 @@ header#appHeader {
   #mainMenu {
     display:inline-block;
 
+    li {
+      color: lighten(@text-color, 20%);
+      a {
+        color: lighten(@text-color, 20%);
+      }
+    }
+
     li.selected {
+      color: @text-color;
       font-weight: bold;
       a {
         color: @text-color;
@@ -42,6 +50,9 @@ header#appHeader {
       text-decoration: underline;
 
       .border-on-hover(@text-color, 7px);
+    }
+    a:visited {
+      color: @link-color;
     }
   }
 }
